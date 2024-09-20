@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position Image</title>
+    <style>
+        img {
+            position: absolute;
+            width: 50px; /* Atur ukuran gambar */
+            height: 50px;
+            pointer-events: none; /* Agar tidak menghalangi interaksi kursor */
+            border-radius: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<img src="https://avatar.iran.liara.run/public/11" alt="image" id="cursorImage">
+
+<script>
+	document.addEventListener('mousemove', function(event) {
+      const img = document.getElementById('cursorImage');
+      
+      // display block
+      img.style.display = "block";
+      img.style.transition = 'left 0.1s ease-out, top 0.1s ease-out';
+
+      // Update posisi gambar sesuai posisi kursor
+      img.style.left = event.pageX + 'px';
+      img.style.top = event.pageY + 'px';
+    });
+
+</script>
+</body>
+</html>
